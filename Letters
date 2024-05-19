@@ -25,3 +25,65 @@ local Window = Rayfield:CreateWindow({
       Key = {"ellis"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
+
+local buytab = Window:CreateTab("Letters", 4483362458)
+local Button = buytab:CreateButton({
+   Name = "F",
+   Callback = function()
+      local args = { [1] = "F" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end,
+})
+local Button = buytab:CreateButton({
+   Name = "A",
+   Callback = function()
+      local args = { [1] = "A" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end,
+})
+local Button = buytab:CreateButton({
+   Name = "B",
+   Callback = function()
+      local args = { [1] = "B" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end,
+})
+local Button = buytab:CreateButton({
+   Name = "C",
+   Callback = function()
+      local args = { [1] = "C" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end,
+})
+local Button = buytab:CreateButton({
+   Name = "D",
+   Callback = function()
+      local args = { [1] = "D" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end,
+})
+local Button = buytab:CreateButton({
+   Name = "E",
+   Callback = function()
+      local args = { [1] = "E" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end,
+})
+
+--functions
+getgenv().toggleF = true
+getgenv().toggleA = true
+  
+function ToggleF()
+ while getgenv().toggleF == true do
+ wait(0.1)
+  local args = { [1] = "F" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end
+end
+function ToggleA()
+ while getgenv().toggleA == true do
+ wait(0.1)
+  local args = { [1] = "A" } game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+   end
+end
+
+
+--toggles
+local autotab = Window:CreateTab("Auto Buy", 4483362458)
+local Toggle = autotab:CreateToggle({ Name = "Auto Buy F", CurrentValue = false, Flag = "Toggle1", Callback = function(Value) getgenv().toggleF = Value ToggleF() end, })
+
+
