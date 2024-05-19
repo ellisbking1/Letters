@@ -86,4 +86,10 @@ end
 local autotab = Window:CreateTab("Auto Buy", 4483362458)
 local Toggle = autotab:CreateToggle({ Name = "Auto Buy F", CurrentValue = false, Flag = "Toggle1", Callback = function(Value) getgenv().toggleF = Value ToggleF() end, })
 
-
+local letterstab = Window:CreateTab("Pages", 4483362458)
+local Button = letterstab:CreateButton({
+   Name = "LETTERS",
+   Callback = function()
+       print("not yet")
+   end,
+})
